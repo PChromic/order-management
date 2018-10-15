@@ -320,7 +320,8 @@ public class Controller {
         boolean hasOrders = validator.customerHasOrders(repository.findAll(), clientId);
         if(hasOrders){
             reportService.setOrderReports(clientId);
-            setOrderTableContent(repository.findAll(),clientId);
+            ObservableList<Order> orders = orderService.setOrderTableContent(clientId);
+            orderList.setItems(orders);
         }
         else {
             resetGui();

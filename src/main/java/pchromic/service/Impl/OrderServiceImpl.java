@@ -1,5 +1,7 @@
 package pchromic.service.Impl;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pchromic.domain.Order;
@@ -8,9 +10,10 @@ import pchromic.mapper.CsvOrderMapper;
 import pchromic.repository.OrderRepository;
 import pchromic.service.OrderService;
 import pchromic.validator.Validator;
-
+import javafx.scene.control.TableView;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 
 @Service
@@ -47,6 +50,19 @@ public class OrderServiceImpl implements OrderService {
                 line = bufferedReader.readLine();
                 throw new WrongOrderFormatException();
             }
+        }
+    }
+
+    @Override
+    public ObservableList<Order> setOrderTableContent(String clientId) {
+        if (clientId.isEmpty()){
+
+            return FXCollections.observableArrayList(repository.findAll());
+        }
+        else{
+
+            return FXCollections.observableArrayList(repository.getOrdersByClientId(clientId));
+
         }
     }
 }
