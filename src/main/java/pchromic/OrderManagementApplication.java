@@ -8,9 +8,6 @@ import javafx.stage.Stage;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-
-import static com.sun.javafx.scene.control.skin.Utils.getResource;
 
 
 @SpringBootApplication

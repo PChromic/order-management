@@ -1,7 +1,6 @@
 package pchromic.validator;
 
 import pchromic.domain.Order;
-import org.springframework.stereotype.Component;
 
 import java.util.List;
 

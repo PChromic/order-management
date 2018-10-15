@@ -32,4 +32,6 @@ public class OrderRepositoryImpl implements CustomizedOrderRepository {
         TypedQuery<Order> tq = entityManager.createQuery(query);
         return tq.getResultList();
     }
+
+
 }

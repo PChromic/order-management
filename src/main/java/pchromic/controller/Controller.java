@@ -4,15 +4,12 @@ import pchromic.domain.Order;
 import pchromic.domain.Report;
 import pchromic.domain.ReportBuilder;
 import pchromic.exception.WrongOrderFormatException;
-import pchromic.mapper.CsvOrderMapper;
 import pchromic.mapper.XmlOrderMapper;
-import pchromic.repository.OrderRepository;
 import pchromic.service.OrderService;
 import pchromic.service.ReportService;
 import pchromic.validator.Impl.ValidatorImpl;
 import pchromic.writer.CsvFileWriter;
 import pchromic.writer.XmlFileWriter;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,18 +49,14 @@ public class Controller {
 
 
     @Autowired
+    private
     ValidatorImpl validator;
     @Autowired
+    private
     ReportService reportService;
-
     @Autowired
+    private
     OrderService orderService;
-
-    @Autowired
-    OrderRepository repository;
-
-    @Autowired
-    CsvOrderMapper csvOrderMapper;
 
 
     private XmlOrderMapper xmlMapper;
@@ -81,7 +74,6 @@ public class Controller {
         xmlMapper = new XmlOrderMapper();
         csvWriter = new CsvFileWriter();
         xmlWriter = new XmlFileWriter();
-        validator = new ValidatorImpl();
         setOrderTableColumns();
     }
 
@@ -136,9 +128,6 @@ public class Controller {
 
     // ------------- FILE INPUT MANAGEMENT ------------- //
 
-
-
-
     /**
      * Creates File Chooser dialog with specific file types option
      * @return returns instance of file chooser
@@ -168,15 +157,6 @@ public class Controller {
         return split[split.length-1];
     }
 
-    /**
-     * Gets buffered reader for given file
-     * @param csvFile CSV file
-     * @return returns buffered reader
-     * @throws FileNotFoundException throws an exception when file cannot be found
-     */
-    private BufferedReader openFileToBuffReader(File csvFile) throws FileNotFoundException {
-        return new BufferedReader(new FileReader(csvFile));
-    }
 
     /**
      * Opens file / list of files and maps it / them to list of orders. Calls onFilter method
@@ -220,7 +200,9 @@ public class Controller {
                         break;
 
                     case "xml":
-                        this.orders.addAll(xmlMapper.map(aFile));
+                        List<Order> xmlOrders = xmlMapper.map(aFile);
+                        for (Order order : xmlOrders)
+                            orderService.addOrder(order);
 
                         break;
                 }
@@ -274,7 +256,7 @@ public class Controller {
     @FXML void onFilter(ActionEvent event) {
         setErrorLog("");
         this.clientId = filterField.getText();
-        boolean hasOrders = validator.customerHasOrders(repository.findAll(), clientId);
+        boolean hasOrders = validator.customerHasOrders(orderService.getAllOrders(), clientId);
         if(hasOrders){
             this.report = reportService.setOrderReports(clientId);
             setOrderReports(report);
@@ -302,13 +284,13 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersAvgValue(reportService.getAverageValueOfOrder()
+                    .withOrdersAvgValue(orderService.getAverageValueOfOrder()
                             .toString())
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAvgValue(reportService.getAverageValueOfOrderForCustomer(this.clientId)
+                    .withOrdersAvgValue(orderService.getAverageValueOfOrderForCustomer(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);
@@ -325,13 +307,13 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersAmount(reportService.getTotalAmountOfOrders()
+                    .withOrdersAmount(orderService.getTotalAmountOfOrders()
                             .toString())
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAmount(reportService.getTotalAmountOfOrdersForCustomer(this.clientId)
+                    .withOrdersAmount(orderService.getTotalAmountOfOrdersForCustomer(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);
@@ -348,13 +330,13 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersValue(reportService.getTotalOrdersValue()
+                    .withOrdersValue(orderService.getTotalOrdersValue()
                             .toString())
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersValue(reportService.getTotalOrdersValueForCustomer(this.clientId)
+                    .withOrdersValue(orderService.getTotalOrdersValueForCustomer(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);

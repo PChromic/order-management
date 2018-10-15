@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 import pchromic.controller.Controller;
 import pchromic.domain.Order;
@@ -15,7 +14,6 @@ import pchromic.service.OrderService;
 import javax.transaction.Transactional;
 
 import java.io.*;
-import java.net.URL;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -26,9 +24,11 @@ import static org.junit.Assert.*;
 public class OrderServiceTest {
 
     @Autowired
+    private
     OrderService service;
 
     @Autowired
+    private
     OrderRepository repository;
 
     @Autowired
