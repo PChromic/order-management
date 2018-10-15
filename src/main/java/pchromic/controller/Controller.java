@@ -236,28 +236,6 @@ public class Controller {
     // ------------- TABLE AND REPORT MANAGEMENT ------------- //
 
     /**
-     * Takes list of orders and client id as parameters and fills table with full list of orders
-     * if client as default or list of the client if its id is specified
-     * @param orders list of all orders
-     * @param clientId id of client
-     */
-    private void setOrderTableContent(List<Order> orders, String clientId) {
-        ObservableList<Order> data;
-        if (clientId.isEmpty()){
-
-            data = FXCollections.observableArrayList(reportService.getAllOrders(orders));
-            this.orders = reportService.getAllOrders(orders);
-        }
-        else{
-
-            data = FXCollections.observableArrayList(reportService.getAllOrdersForCustomer(orders,clientId));
-            this.orders =  reportService.getAllOrdersForCustomer(orders,clientId);
-
-        }
-        orderList.setItems(data);
-    }
-
-    /**
      * Creates headers and data types for rows of table showing list of orders
      */
     private void setOrderTableColumns() {
@@ -268,37 +246,6 @@ public class Controller {
         priceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
     }
 
-    /**
-     * Generates reports for given list of orders. By default report concerns all orders,
-     * when client is specified - only these concerning him
-     * @param orders list of all orders
-     * @param clientId id of client
-     */
-    private void setOrderReports(List<Order> orders, String clientId){
-        String orderAmount;
-        String ordersValue;
-        String ordersAvgValue;
-        List<Order> orders2 = repository.findAll();
-        if (clientId.isEmpty()){
-            orderAmount = reportService.getTotalAmountOfOrders(orders2).toString();
-            this.ordersAmount.setText(orderAmount);
-            ordersValue = reportService.getTotalOrdersValue(orders2).toString();
-            this.ordersValue.setText(ordersValue);
-            ordersAvgValue = reportService.getAverageValueOfOrder(orders2).toString();
-            this.ordersAvgValue.setText(ordersAvgValue);
-
-        }
-        else {
-            orderAmount = reportService.getTotalAmountOfOrdersForCustomer(orders2, clientId).toString();
-            this.ordersAmount.setText(orderAmount);
-            ordersValue = reportService.getTotalOrdersValueForCustomer(orders2, clientId).toString();
-            this.ordersValue.setText(ordersValue);
-            ordersAvgValue = reportService.getAverageValueOfOrderForCustomer(orders2, clientId).toString();
-            this.ordersAvgValue.setText(ordersAvgValue);
-
-        }
-        this.report = new Report(orderAmount,ordersValue,ordersAvgValue);
-    }
 
     /**
      * Set report values empty
@@ -307,6 +254,16 @@ public class Controller {
         ordersAmount.setText("");
         ordersValue.setText("");
         ordersAvgValue.setText("");
+    }
+
+    /**
+     * Sets report values
+     * @param report Report concerning orders
+     */
+    private void setOrderReports (Report report){
+        this.ordersAmount.setText(report.getOrdersAmount());
+        this.ordersValue.setText(report.getOrdersValue());
+        this.ordersAvgValue.setText(report.getOrdersAvgValue());
     }
 
     /**
@@ -319,7 +276,8 @@ public class Controller {
         this.clientId = filterField.getText();
         boolean hasOrders = validator.customerHasOrders(repository.findAll(), clientId);
         if(hasOrders){
-            reportService.setOrderReports(clientId);
+            this.report = reportService.setOrderReports(clientId);
+            setOrderReports(report);
             ObservableList<Order> orders = orderService.setOrderTableContent(clientId);
             orderList.setItems(orders);
         }
@@ -344,13 +302,13 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersAvgValue(reportService.getAverageValueOfOrder(orders)
+                    .withOrdersAvgValue(reportService.getAverageValueOfOrder()
                             .toString())
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAvgValue(reportService.getAverageValueOfOrderForCustomer(orders, this.clientId)
+                    .withOrdersAvgValue(reportService.getAverageValueOfOrderForCustomer(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);
@@ -367,13 +325,13 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersAmount(reportService.getTotalAmountOfOrders(orders)
+                    .withOrdersAmount(reportService.getTotalAmountOfOrders()
                             .toString())
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAmount(reportService.getTotalAmountOfOrdersForCustomer(orders, this.clientId)
+                    .withOrdersAmount(reportService.getTotalAmountOfOrdersForCustomer(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);
@@ -390,13 +348,13 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersValue(reportService.getTotalOrdersValue(orders)
+                    .withOrdersValue(reportService.getTotalOrdersValue()
                             .toString())
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersValue(reportService.getTotalOrdersValueForCustomer(orders, this.clientId)
+                    .withOrdersValue(reportService.getTotalOrdersValueForCustomer(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);

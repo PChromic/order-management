@@ -23,45 +23,38 @@ public class ReportServiceImpl implements ReportService {
         String orderAmount;
         String ordersValue;
         String ordersAvgValue;
-        List<Order> orders2 = repository.findAll();
+        List<Order> orders = repository.findAll();
         if (clientId.isEmpty()){
-            orderAmount = this.getTotalAmountOfOrders(orders2).toString();
-         //   this.ordersAmount.setText(orderAmount);
-            ordersValue = this.getTotalOrdersValue(orders2).toString();
-         //   this.ordersValue.setText(ordersValue);
-            ordersAvgValue = this.getAverageValueOfOrder(orders2).toString();
-         //   this.ordersAvgValue.setText(ordersAvgValue);
+            orderAmount = this.getTotalAmountOfOrders().toString();
+            ordersValue = this.getTotalOrdersValue().toString();
+            ordersAvgValue = this.getAverageValueOfOrder().toString();
 
         }
         else {
-            orderAmount = this.getTotalAmountOfOrdersForCustomer(orders2, clientId).toString();
-         //   this.ordersAmount.setText(orderAmount);
-            ordersValue = this.getTotalOrdersValueForCustomer(orders2, clientId).toString();
-         //   this.ordersValue.setText(ordersValue);
-            ordersAvgValue = this.getAverageValueOfOrderForCustomer(orders2, clientId).toString();
-         //   this.ordersAvgValue.setText(ordersAvgValue);
-
+            orderAmount = this.getTotalAmountOfOrdersForCustomer( clientId).toString();
+            ordersValue = this.getTotalOrdersValueForCustomer( clientId).toString();
+            ordersAvgValue = this.getAverageValueOfOrderForCustomer( clientId).toString();
         }
         return  new Report(orderAmount,ordersValue,ordersAvgValue);
     }
 
     @Override
-    public Integer getTotalAmountOfOrders(List<Order> orders) {
+    public Integer getTotalAmountOfOrders() {
 
-        return orders.size();
+        return repository.findAll().size();
     }
 
     @Override
-    public Long getTotalAmountOfOrdersForCustomer(List<Order> orders, String clientId) {
-        return orders.stream()
+    public Long getTotalAmountOfOrdersForCustomer(String clientId) {
+        return repository.findAll().stream()
                 .filter(id -> clientId.equals(id.getClientId()))
                 .count();
     }
 
     @Override
-    public Double getTotalOrdersValue(List<Order> orders) {
+    public Double getTotalOrdersValue() {
 
-        double sum = orders.stream()
+        double sum = repository.findAll().stream()
                 .mapToDouble(Order::getPrice)
                 .sum();
 
@@ -72,9 +65,9 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public Double getTotalOrdersValueForCustomer(List<Order> orders, String clientId) {
+    public Double getTotalOrdersValueForCustomer(String clientId) {
 
-        double sum = orders.stream()
+        double sum = repository.findAll().stream()
                 .filter(id -> clientId.equals(id.getClientId()))
                 .mapToDouble(Order::getPrice)
                 .sum();
@@ -87,40 +80,40 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public List<Order> getAllOrders(List<Order> orders) {
-        return orders;
+    public List<Order> getAllOrders() {
+        return repository.findAll();
     }
 
     @Override
-    public List<Order> getAllOrdersForCustomer(List<Order> orders, String clientId) {
+    public List<Order> getAllOrdersForCustomer( String clientId) {
 
-        return orders.stream().
+        return repository.findAll().stream().
                 filter(id -> clientId.equals(id.getClientId()))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public Double getAverageValueOfOrder(List<Order> orders) {
-        double sum = orders.stream()
+    public Double getAverageValueOfOrder() {
+        double sum = repository.findAll().stream()
                 .mapToDouble(Order::getPrice)
                 .sum();
 
 
         return BigDecimal
-                .valueOf(sum/orders.size())
+                .valueOf(sum/repository.findAll().size())
                 .setScale(2, RoundingMode.HALF_UP)
                 .doubleValue();
     }
 
     @Override
-    public Double getAverageValueOfOrderForCustomer(List<Order> orders, String clientId) {
+    public Double getAverageValueOfOrderForCustomer(String clientId) {
 
-        double sum = orders.stream()
+        double sum = repository.findAll().stream()
                 .filter(id -> clientId.equals(id.getClientId()))
                 .mapToDouble(Order::getPrice)
                 .sum();
 
-        double customersOrderCount = orders.stream()
+        double customersOrderCount = repository.findAll().stream()
                 .filter(id -> clientId.equals(id.getClientId()))
                 .count();
 
