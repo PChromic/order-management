@@ -1,6 +1,9 @@
 package pchromic.domain;
 
 
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvBindByPosition;
+
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
 
@@ -23,17 +26,23 @@ public class Order {
     @Column(name="id")
     private Integer id;
 
+    @CsvBindByName(column = "Client_Id",required = true)
+    @Column(nullable = false)
     private String clientId;
 
+    @CsvBindByName(column = "Request_Id", required = true)
     @Column(nullable = false)
     private Long requestId;
 
+    @CsvBindByName(column = "Name" ,required = true)
     @Column(nullable = false)
     private String name;
 
+    @CsvBindByName(column = "Quantity",required = true)
     @Column(nullable = false)
     private Integer quantity;
 
+    @CsvBindByName(column = "Price",required = true)
     @Column(nullable = false)
     private Double price;
 

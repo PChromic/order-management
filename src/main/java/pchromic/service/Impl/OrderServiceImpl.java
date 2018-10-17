@@ -1,5 +1,10 @@
 package pchromic.service.Impl;
 
+import com.opencsv.CSVReader;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
+import com.opencsv.exceptions.CsvException;
+import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +17,13 @@ import pchromic.service.OrderService;
 import pchromic.validator.Impl.ValidatorImpl;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -33,6 +42,7 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private
     CsvOrderMapper mapper;
+
 
     @Override
     public void addOrder(Order order) {
@@ -125,11 +135,30 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void mapCsv(BufferedReader bufferedReader) throws IOException, WrongOrderFormatException {
+    public List<String> mapCsv(File file) throws IOException {
+        List<String> errorMessages = new ArrayList<>();
 
-        bufferedReader.readLine();
+        CSVReader reader = new CSVReader(new FileReader(file));
+        String [] nextLine = reader.readNext();
+        int i = 1;
+        while ((nextLine = reader.readNext()) != null)  {
+
+            boolean isLineValid = validator.isCsvLineValid(nextLine);
+            if (isLineValid) {
+                repository.save(mapper.map(nextLine));
+            }
+            else {
+                errorMessages.add("Wrong line format at line : " + i + "\n");
+            }
+            i++;
+        }
+
+
+
+     /*   bufferedReader.readLine();
         String line = bufferedReader.readLine();
 
+        int i = 0;
         while (!Objects.isNull(line)) {
             String[] csvOrder = line.split(",");
             boolean isLineValid = validator.isCsvLineValid(csvOrder);
@@ -139,9 +168,11 @@ public class OrderServiceImpl implements OrderService {
             }
             else {
                 line = bufferedReader.readLine();
-                throw new WrongOrderFormatException();
+                errorMessages.add("Wrong line format at line : " + i + "\n");
             }
-        }
+            i++;
+        }*/
+        return errorMessages;
     }
 
     @Override

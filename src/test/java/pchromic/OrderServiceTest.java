@@ -34,7 +34,7 @@ public class OrderServiceTest {
     @Autowired
     Controller controller;
 
-    @Test
+ /*   @Test
     public void shouldGetAllOrders() throws Exception {
         // given
 
@@ -64,5 +64,5 @@ public class OrderServiceTest {
         service.mapCsv(bufferedReader);
 
     }
-
+*/
 }

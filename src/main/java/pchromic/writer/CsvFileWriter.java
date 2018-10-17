@@ -1,14 +1,12 @@
 package pchromic.writer;
 
+import com.opencsv.CSVWriter;
 import pchromic.domain.Report;
-import org.supercsv.cellprocessor.constraint.NotNull;
-import org.supercsv.cellprocessor.ift.CellProcessor;
-import org.supercsv.io.CsvBeanWriter;
-import org.supercsv.io.ICsvBeanWriter;
-import org.supercsv.prefs.CsvPreference;
+
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.Objects;
 
 public class CsvFileWriter {
@@ -16,47 +14,34 @@ public class CsvFileWriter {
     public CsvFileWriter() {
     }
 
-    public void writeCsv (Report report) {
-
-        ICsvBeanWriter beanWriter = null;
-        String csvFileName = "report.csv";
-        CellProcessor[] processors = new CellProcessor[]{
-                new NotNull(), // ordersAmount
-
-        };
+    public void writeCsv(Report report) {
 
         try {
-            beanWriter = new CsvBeanWriter(new FileWriter(csvFileName),
-                    CsvPreference.STANDARD_PREFERENCE);
+            Writer writer = new FileWriter("report.csv");
 
             String[] header = new String[1];
+            String[] entry = new String[1];
+
             if(!Objects.isNull(report.getOrdersAmount())){
                 header[0] = "ordersAmount";
+                entry[0] = report.getOrdersAmount();
             }
             if(!Objects.isNull(report.getOrdersValue())){
                 header[0] = "ordersValue";
+                entry[0] = report.getOrdersValue();
             }
             if(!Objects.isNull(report.getOrdersAvgValue())){
                 header[0] = "ordersAvgValue";
+                entry[0] = report.getOrdersAvgValue();
             }
+            writer.write(header[0] + "\n");
+            writer.write(entry[0]);
 
-            beanWriter.writeHeader(header);
+            writer.close();
 
-            beanWriter.write(report, header, processors);
-
-
-        } catch (
-                IOException ex) {
-            System.err.println("Error writing the CSV file: " + ex);
-        } finally {
-
-            if (beanWriter != null) {
-                try {
-                    beanWriter.close();
-                } catch (IOException ex) {
-                    System.err.println("Error closing the writer: " + ex);
-                }
-            }
+        } catch (IOException e) {
+            System.err.println("Error writing the CSV file: " + e);
         }
+
     }
 }

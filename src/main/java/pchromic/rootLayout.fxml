@@ -2,11 +2,11 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -14,30 +14,30 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pchromic.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pchromic.controller.Controller">
    <children>
-      <SplitPane dividerPositions="0.47324414715719065" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
-                  <TableView fx:id="orderList" layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="orderList" layoutX="137.0" layoutY="14.0" prefHeight="448.0" prefWidth="285.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="clientIdCol" prefWidth="50.0" text="ClientId" />
-                      <TableColumn fx:id="requestIdCol" prefWidth="70.0" text="RequestId" />
-                        <TableColumn fx:id="nameCol" prefWidth="50.0" text="Name" />
-                        <TableColumn fx:id="quantityCol" prefWidth="60.0" text="Quantity" />
-                        <TableColumn fx:id="priceCol" prefWidth="50.0" text="Price" />
+                      <TableColumn fx:id="clientIdCol" prefWidth="81.0" text="ClientId" />
+                      <TableColumn fx:id="requestIdCol" prefWidth="90.0" text="RequestId" />
+                        <TableColumn fx:id="nameCol" prefWidth="82.0" text="Name" />
+                        <TableColumn fx:id="quantityCol" prefWidth="86.0" text="Quantity" />
+                        <TableColumn fx:id="priceCol" prefWidth="100.0" text="Price" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="298.0" prefWidth="300.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0">
                <children>
-                  <GridPane fx:id="reportTable" layoutX="10.0" layoutY="95.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                  <GridPane fx:id="reportTable" layoutX="10.0" layoutY="95.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="17.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="132.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="62.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="147.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="223.0" minWidth="10.0" prefWidth="177.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.0" minWidth="10.0" prefWidth="106.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -68,13 +68,8 @@
                         </Button>
                      </children>
                   </GridPane>
-                  <TextField fx:id="filterField" disable="true" layoutX="67.0" layoutY="52.0" prefHeight="25.0" prefWidth="185.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="190.0" />
-                  <Button fx:id="filterButton" disable="true" layoutX="112.0" layoutY="52.0" mnemonicParsing="false" onAction="#onFilter" prefHeight="25.0" prefWidth="65.0" text="Filter" AnchorPane.leftAnchor="122.0" />
-                  <ButtonBar layoutX="83.0" layoutY="225.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
-                    <buttons>
-                      <Button fx:id="openFileButton" mnemonicParsing="false" onAction="#onOpenFile" prefHeight="25.0" prefWidth="108.0" text="Open File" />
-                    </buttons>
-                  </ButtonBar>
+                  <TextField fx:id="filterField" disable="true" layoutX="226.0" layoutY="52.0" prefHeight="25.0" prefWidth="119.0" AnchorPane.rightAnchor="95.0" AnchorPane.topAnchor="60.0" />
+                  <Button fx:id="filterButton" disable="true" layoutX="345.0" layoutY="52.0" mnemonicParsing="false" onAction="#onFilter" prefHeight="25.0" prefWidth="65.0" text="Filter" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0" />
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="271.0" text="Order management" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
                      <font>
                         <Font size="24.0" />
@@ -82,6 +77,8 @@
                   </Label>
                   <Label fx:id="errorMessage" layoutX="23.0" layoutY="225.0" textFill="RED" />
                   <Label fx:id="wrongOrderFormat" layoutX="14.0" layoutY="197.0" textFill="RED" AnchorPane.leftAnchor="20.0" />
+                  <TextArea fx:id="errorMessages" layoutX="230.0" layoutY="197.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="30.0" />
+                <Button fx:id="openFileButton" layoutX="302.0" layoutY="400.0" mnemonicParsing="false" onAction="#onOpenFile" prefHeight="25.0" prefWidth="108.0" text="Open File" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" />
                </children>
             </AnchorPane>
         </items>

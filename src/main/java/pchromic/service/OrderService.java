@@ -5,6 +5,7 @@ import pchromic.domain.Order;
 import pchromic.exception.WrongOrderFormatException;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
@@ -74,7 +75,7 @@ public interface OrderService {
      * @param bufferedReader file input
      * @throws IOException throws exception when file cannot be red
      */
-    void mapCsv (BufferedReader bufferedReader) throws IOException, WrongOrderFormatException;
+    List<String> mapCsv (File file ) throws IOException;
 
     /**
      * Takes client id as parameter and fills table with full list of orders

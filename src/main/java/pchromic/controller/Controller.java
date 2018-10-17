@@ -3,7 +3,6 @@ package pchromic.controller;
 import pchromic.domain.Order;
 import pchromic.domain.Report;
 import pchromic.domain.ReportBuilder;
-import pchromic.exception.WrongOrderFormatException;
 import pchromic.mapper.XmlOrderMapper;
 import pchromic.service.OrderService;
 import pchromic.service.ReportService;
@@ -46,6 +45,7 @@ public class Controller {
     @FXML private Button ordersValueReport;
     @FXML private Button averageOrdersValueReport;
     @FXML private Label wrongOrderFormat;
+    @FXML private TextArea errorMessages;
 
 
     @Autowired
@@ -62,9 +62,9 @@ public class Controller {
     private XmlOrderMapper xmlMapper;
     private CsvFileWriter csvWriter;
     private XmlFileWriter xmlWriter;
-    private List<Order> orders = new ArrayList<>();
     private Report report;
     private String clientId;
+    private List<String> errorList = new ArrayList<>();
 
     /**
      * Method responsible for creating instances of utilities needed to manage orders
@@ -78,6 +78,7 @@ public class Controller {
     }
 
     // ------------- GUI LAYOUT MANAGEMENT ------------- //
+
 
     /**
      * Enables graphic user interface to users
@@ -95,9 +96,9 @@ public class Controller {
      */
     private void resetGui() {
         clearOrderReports();
-        this.orders = new ArrayList<>();
         filterField.setText("");
         wrongOrderFormat.setText("");
+        errorMessages.clear();
         orderList.getItems().clear();
     }
 
@@ -110,13 +111,7 @@ public class Controller {
         averageOrdersValueReport.setDisable(true);
     }
 
-    /**
-     * Sets label with information concerning error
-     * @param log message describing error
-     */
-    private void setErrorLog(String log) {
-        this.errorMessage.setText(log);
-    }
+
 
     /**
      * Sets label with information concerning inappropriate order format
@@ -190,12 +185,9 @@ public class Controller {
 
                     case "csv":
                         try {
-                            orderService.mapCsv(Objects.requireNonNull(bufferedReader));
-
+                        errorList = orderService.mapCsv(Objects.requireNonNull(aFile));
                         } catch (IOException e) {//
                             e.printStackTrace();
-                        } catch (WrongOrderFormatException e) {
-                            setWrongOrderLog();
                         }
                         break;
 
@@ -208,14 +200,30 @@ public class Controller {
                 }
             }
             onFilter(event);
-            enableGui();
         }
         else
-            setErrorLog("File not chosen");
+            errorList.add("File not chosen \n");
+        setErrorMessages();
     }
     // -------------------------------------------------------------------------------------------------- //
 
-    // ------------- TABLE AND REPORT MANAGEMENT ------------- //
+    // ------------- GUI CONTENT MANAGEMENT ------------- //
+
+    /**
+     * Sets label with information concerning error
+     * @param log message describing error
+     */
+    private void setErrorLog(String log) {
+        this.errorMessage.setText(log);
+    }
+
+    void setErrorMessages() {
+        for (String error: errorList) {
+            errorMessages.setWrapText(true);
+            errorMessages.appendText(error);
+        }
+        errorList.clear();
+    }
 
     /**
      * Creates headers and data types for rows of table showing list of orders
@@ -254,19 +262,21 @@ public class Controller {
      * @param event pressing the button
      */
     @FXML void onFilter(ActionEvent event) {
-        setErrorLog("");
+      //  setErrorLog("");
         this.clientId = filterField.getText();
         boolean hasOrders = validator.customerHasOrders(orderService.getAllOrders(), clientId);
         if(hasOrders){
-            this.report = reportService.setOrderReports(clientId);
+                this.report = reportService.setOrderReports(clientId);
             setOrderReports(report);
             ObservableList<Order> orders = orderService.setOrderTableContent(clientId);
             orderList.setItems(orders);
+            enableGui();
         }
         else {
             resetGui();
             disableWriteToFile();
-            setErrorLog("Client does not exist");
+            errorList.add("Client does not exist \n");
+            setErrorMessages();
         }
 
     }
