@@ -33,7 +33,7 @@ public class OrderManagementApplication extends Application {
 
 		//springContext = srpingBootApplicationContext();
 		springContext = SpringApplication.run(OrderManagementApplication.class);
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("rootLayout.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/rootLayout.fxml"));
 		fxmlLoader.setControllerFactory(springContext::getBean);
 
 		rootNode = fxmlLoader.load();

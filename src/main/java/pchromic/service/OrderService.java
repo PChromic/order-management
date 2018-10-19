@@ -1,10 +1,11 @@
 package pchromic.service;
 
 import javafx.collections.ObservableList;
+import org.springframework.stereotype.Service;
 import pchromic.domain.Order;
-import pchromic.exception.WrongOrderFormatException;
 
-import java.io.BufferedReader;
+
+
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -72,7 +73,6 @@ public interface OrderService {
 
     /**
      * Maps orders from CSV type file to Order list
-     * @param bufferedReader file input
      * @throws IOException throws exception when file cannot be red
      */
     List<String> mapCsv (File file ) throws IOException;

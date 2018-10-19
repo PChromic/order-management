@@ -112,13 +112,6 @@ public class Controller {
     }
 
 
-
-    /**
-     * Sets label with information concerning inappropriate order format
-     */
-    private void setWrongOrderLog(){
-        this.wrongOrderFormat.setText("Order contains incorrect lines");
-    }
     // -------------------------------------------------------------------------------------------------- //
 
     // ------------- FILE INPUT MANAGEMENT ------------- //
@@ -168,15 +161,6 @@ public class Controller {
         if (!Objects.isNull(file)) {
             for (File aFile : file) {
 
-                BufferedReader bufferedReader = null;
-                try {
-                    bufferedReader = new BufferedReader(
-                            new InputStreamReader(new FileInputStream(aFile), charset));
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                    setErrorLog("Could not open the file");
-                }
-
                 String ext = getFileExtension(aFile.getName());
 
                 switch (ext) {
@@ -186,7 +170,7 @@ public class Controller {
                     case "csv":
                         try {
                         errorList = orderService.mapCsv(Objects.requireNonNull(aFile));
-                        } catch (IOException e) {//
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
                         break;
@@ -217,7 +201,7 @@ public class Controller {
         this.errorMessage.setText(log);
     }
 
-    void setErrorMessages() {
+    private void setErrorMessages() {
         for (String error: errorList) {
             errorMessages.setWrapText(true);
             errorMessages.appendText(error);

@@ -1,31 +1,23 @@
 package pchromic.service.Impl;
 
 import com.opencsv.CSVReader;
-import com.opencsv.bean.CsvToBean;
-import com.opencsv.bean.CsvToBeanBuilder;
-import com.opencsv.exceptions.CsvException;
-import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pchromic.domain.Order;
-import pchromic.exception.WrongOrderFormatException;
 import pchromic.mapper.CsvOrderMapper;
 import pchromic.repository.OrderRepository;
 import pchromic.service.OrderService;
 import pchromic.validator.Impl.ValidatorImpl;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -137,41 +129,19 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<String> mapCsv(File file) throws IOException {
         List<String> errorMessages = new ArrayList<>();
+        List<String[]> strings = new CSVReader(new FileReader(file)).readAll();
 
-        CSVReader reader = new CSVReader(new FileReader(file));
-        String [] nextLine = reader.readNext();
-        int i = 1;
-        while ((nextLine = reader.readNext()) != null)  {
 
-            boolean isLineValid = validator.isCsvLineValid(nextLine);
+        for (int i = 1; i < strings.size(); i++) {
+
+            boolean isLineValid = validator.isCsvLineValid(strings.get(i));
             if (isLineValid) {
-                repository.save(mapper.map(nextLine));
+               repository.save(mapper.map(strings.get(i)));
             }
             else {
                 errorMessages.add("Wrong line format at line : " + i + "\n");
             }
-            i++;
         }
-
-
-
-     /*   bufferedReader.readLine();
-        String line = bufferedReader.readLine();
-
-        int i = 0;
-        while (!Objects.isNull(line)) {
-            String[] csvOrder = line.split(",");
-            boolean isLineValid = validator.isCsvLineValid(csvOrder);
-            if (isLineValid) {
-                repository.save(mapper.map(csvOrder));
-                line = bufferedReader.readLine();
-            }
-            else {
-                line = bufferedReader.readLine();
-                errorMessages.add("Wrong line format at line : " + i + "\n");
-            }
-            i++;
-        }*/
         return errorMessages;
     }
 
