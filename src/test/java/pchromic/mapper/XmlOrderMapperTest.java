@@ -1,18 +1,10 @@
 package pchromic.mapper;
 
-import org.apache.commons.io.FileUtils;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
-import java.io.File;
-import java.nio.charset.Charset;
-
-import static org.junit.Assert.*;
-
-public class XmlOrderMapperTest {
+class XmlOrderMapperTest {
 
 
     @Rule
@@ -20,7 +12,7 @@ public class XmlOrderMapperTest {
 
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
 
    /*     final File tempFile = tempFolder.newFile("tempFile.txt");
 

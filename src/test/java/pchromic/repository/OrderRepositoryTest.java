@@ -17,6 +17,7 @@ import static org.junit.Assert.*;
 public class OrderRepositoryTest {
 
     @Autowired
+    private
     OrderRepository repository;
 
     @Test

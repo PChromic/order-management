@@ -2,7 +2,6 @@ package pchromic.domain;
 
 
 import com.opencsv.bean.CsvBindByName;
-import com.opencsv.bean.CsvBindByPosition;
 
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;

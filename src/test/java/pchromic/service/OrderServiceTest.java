@@ -6,14 +6,11 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import pchromic.repository.OrderRepository;
 import pchromic.service.Impl.OrderServiceImpl;
 
-import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
@@ -31,12 +28,14 @@ public class OrderServiceTest {
 
 
     @Rule
-    public TemporaryFolder tempFolder = new TemporaryFolder();
+    public final TemporaryFolder tempFolder = new TemporaryFolder();
 
     @Autowired
+    private
     OrderServiceImpl service;
 
     @Autowired
+    private
     OrderRepository repository;
 
 

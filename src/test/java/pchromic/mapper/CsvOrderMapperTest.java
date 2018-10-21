@@ -1,8 +1,6 @@
 package pchromic.mapper;
 
 import org.apache.commons.io.FileUtils;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
@@ -24,11 +22,13 @@ public class CsvOrderMapperTest {
 
 
     @Rule
-    public TemporaryFolder tempFolder = new TemporaryFolder();
+    public final TemporaryFolder tempFolder = new TemporaryFolder();
 
     @Autowired
+    private
     CsvOrderMapper mapper;
     @Autowired
+    private
     OrderRepository repository;
 
 
