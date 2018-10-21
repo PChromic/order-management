@@ -26,7 +26,7 @@ public interface OrderService {
      * @param clientId id of client
      * @return amount of orders for customer
      */
-    Long getTotalAmountOfOrdersForCustomer( String clientId);
+    Integer getTotalAmountOfOrdersForClient(String clientId);
 
     /**
      * Takes list of all orders as parameter and returns their total value
@@ -40,7 +40,7 @@ public interface OrderService {
      * @param clientId id of client
      * @return total value of orders for the client
      */
-    Double getTotalOrdersValueForCustomer( String clientId);
+    Double getTotalOrdersValueForClient(String clientId);
 
     /**
      * Takes a list of orders as parameter and returns it.
@@ -54,7 +54,7 @@ public interface OrderService {
      * @param clientId id of client
      * @return list of orders for the client
      */
-    List<Order> getAllOrdersForCustomer( String clientId);
+    List<Order> getAllOrdersForClient(String clientId);
 
     /**
      * Takes a list of orders as parameter and returns
@@ -69,7 +69,7 @@ public interface OrderService {
      * @param clientId id of client
      * @return average value of orders for customer
      */
-    Double getAverageValueOfOrderForCustomer( String clientId);
+    Double getAverageValueOfOrderForClient(String clientId);
 
     /**
      * Maps orders from CSV type file to Order list

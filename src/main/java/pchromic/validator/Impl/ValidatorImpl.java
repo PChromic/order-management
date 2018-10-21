@@ -9,7 +9,7 @@ import java.util.List;
 public class ValidatorImpl implements Validator {
 
     @Override
-    public boolean customerExists(List<Order> orders, String clientId) {
+    public boolean clientExists(List<Order> orders, String clientId) {
 
         long count = orders.stream()
                 .map(Order::getClientId)
@@ -25,8 +25,8 @@ public class ValidatorImpl implements Validator {
     }
 
     @Override
-    public boolean customerHasOrders(List<Order> orders, String clientId) {
+    public boolean clientHasOrders(List<Order> orders, String clientId) {
         boolean isNumericOrEmpty = clientId.matches("^[0-9]+$") || clientId.isEmpty();
-        return isNumericOrEmpty && (this.customerExists(orders, clientId) || clientId.isEmpty());
+        return isNumericOrEmpty && (this.clientExists(orders, clientId) || clientId.isEmpty());
     }
 }

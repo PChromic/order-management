@@ -25,9 +25,9 @@ public class ReportServiceImpl implements ReportService {
 
         }
         else {
-            orderAmount = service.getTotalAmountOfOrdersForCustomer( clientId).toString();
-            ordersValue = service.getTotalOrdersValueForCustomer( clientId).toString();
-            ordersAvgValue = service.getAverageValueOfOrderForCustomer( clientId).toString();
+            orderAmount = service.getTotalAmountOfOrdersForClient( clientId).toString();
+            ordersValue = service.getTotalOrdersValueForClient( clientId).toString();
+            ordersAvgValue = service.getAverageValueOfOrderForClient( clientId).toString();
         }
         return  new Report(orderAmount,ordersValue,ordersAvgValue);
     }

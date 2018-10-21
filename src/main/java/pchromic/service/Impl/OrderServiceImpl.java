@@ -44,42 +44,24 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Integer getTotalAmountOfOrders() {
 
-        return repository.findAll().size();
+        return repository.getTotalAmountOfOrders();
     }
 
     @Override
-    public Long getTotalAmountOfOrdersForCustomer(String clientId) {
-        return repository.findAll().stream()
-                .filter(id -> clientId.equals(id.getClientId()))
-                .count();
+    public Integer getTotalAmountOfOrdersForClient(String clientId) {
+        return repository.getOrdersAmountForClient(clientId);
     }
 
     @Override
     public Double getTotalOrdersValue() {
 
-        double sum = repository.findAll().stream()
-                .mapToDouble(Order::getPrice)
-                .sum();
-
-        return BigDecimal
-                .valueOf(sum)
-                .setScale(2, RoundingMode.HALF_UP)
-                .doubleValue();
+        return repository.getTotalOrdersValue();
     }
 
     @Override
-    public Double getTotalOrdersValueForCustomer(String clientId) {
+    public Double getTotalOrdersValueForClient(String clientId) {
 
-        double sum = repository.findAll().stream()
-                .filter(id -> clientId.equals(id.getClientId()))
-                .mapToDouble(Order::getPrice)
-                .sum();
-
-
-        return BigDecimal
-                .valueOf(sum)
-                .setScale(2, RoundingMode.HALF_UP)
-                .doubleValue();
+        return repository.getTotalOrdersValueForClient(clientId);
     }
 
     @Override
@@ -88,42 +70,20 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getAllOrdersForCustomer(String clientId) {
+    public List<Order> getAllOrdersForClient(String clientId) {
 
-        return repository.findAll().stream().
-                filter(id -> clientId.equals(id.getClientId()))
-                .collect(Collectors.toList());
+        return repository.getOrdersForClient(clientId);
     }
 
     @Override
     public Double getAverageValueOfOrder() {
-        double sum = repository.findAll().stream()
-                .mapToDouble(Order::getPrice)
-                .sum();
-
-
-        return BigDecimal
-                .valueOf(sum/repository.findAll().size())
-                .setScale(2, RoundingMode.HALF_UP)
-                .doubleValue();
+        return repository.getAverageValueOfOrder();
     }
 
     @Override
-    public Double getAverageValueOfOrderForCustomer(String clientId) {
+    public Double getAverageValueOfOrderForClient(String clientId) {
 
-        double sum = repository.findAll().stream()
-                .filter(id -> clientId.equals(id.getClientId()))
-                .mapToDouble(Order::getPrice)
-                .sum();
-
-        double customersOrderCount = repository.findAll().stream()
-                .filter(id -> clientId.equals(id.getClientId()))
-                .count();
-
-        return BigDecimal
-                .valueOf(sum/customersOrderCount)
-                .setScale(2, RoundingMode.HALF_UP)
-                .doubleValue();
+        return repository.getAverageValueOfOrderForClient(clientId);
     }
 
     @Override
@@ -153,7 +113,7 @@ public class OrderServiceImpl implements OrderService {
         }
         else{
 
-            return FXCollections.observableArrayList(repository.getOrdersByClientId(clientId));
+            return FXCollections.observableArrayList(repository.getOrdersForClient(clientId));
 
         }
     }

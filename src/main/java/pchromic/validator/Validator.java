@@ -14,7 +14,7 @@ public interface Validator {
      * @return true if customer has any orders, false if not or id is wrong
      */
     @SuppressWarnings("unused")
-    boolean customerExists(List<Order> orders, String clientId);
+    boolean clientExists(List<Order> orders, String clientId);
 
     /**
      * Validates single line during CSV file parsing
@@ -24,5 +24,5 @@ public interface Validator {
     @SuppressWarnings("unused")
     boolean isCsvLineValid(String[] csvLine);
 
-    boolean customerHasOrders(List<Order> orders, String clientId);
+    boolean clientHasOrders(List<Order> orders, String clientId);
 }

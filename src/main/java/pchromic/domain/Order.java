@@ -27,23 +27,23 @@ public class Order {
     private Integer id;
 
     @CsvBindByName(column = "Client_Id",required = true)
-    @Column(nullable = false)
+    @Column(name = "client_id",nullable = false)
     private String clientId;
 
     @CsvBindByName(column = "Request_Id", required = true)
-    @Column(nullable = false)
+    @Column(name = "request_id",nullable = false)
     private Long requestId;
 
     @CsvBindByName(column = "Name" ,required = true)
-    @Column(nullable = false)
+    @Column(name = "name",nullable = false)
     private String name;
 
     @CsvBindByName(column = "Quantity",required = true)
-    @Column(nullable = false)
+    @Column(name = "quantity",nullable = false)
     private Integer quantity;
 
     @CsvBindByName(column = "Price",required = true)
-    @Column(nullable = false)
+    @Column(name = "price",nullable = false)
     private Double price;
 
     public Order() {

@@ -248,7 +248,7 @@ public class Controller {
     @FXML void onFilter(ActionEvent event) {
       //  setErrorLog("");
         this.clientId = filterField.getText();
-        boolean hasOrders = validator.customerHasOrders(orderService.getAllOrders(), clientId);
+        boolean hasOrders = validator.clientHasOrders(orderService.getAllOrders(), clientId);
         if(hasOrders){
                 this.report = reportService.setOrderReports(clientId);
             setOrderReports(report);
@@ -284,7 +284,7 @@ public class Controller {
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAvgValue(orderService.getAverageValueOfOrderForCustomer(this.clientId)
+                    .withOrdersAvgValue(orderService.getAverageValueOfOrderForClient(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);
@@ -307,7 +307,7 @@ public class Controller {
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAmount(orderService.getTotalAmountOfOrdersForCustomer(this.clientId)
+                    .withOrdersAmount(orderService.getTotalAmountOfOrdersForClient(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);
@@ -330,7 +330,7 @@ public class Controller {
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersValue(orderService.getTotalOrdersValueForCustomer(this.clientId)
+                    .withOrdersValue(orderService.getTotalOrdersValueForClient(this.clientId)
                             .toString())
                     .build();
         csvWriter.writeCsv(this.report);

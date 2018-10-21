@@ -1,30 +1,22 @@
 package pchromic.service;
 
 import org.apache.commons.io.FileUtils;
-import org.aspectj.util.FileUtil;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
-import pchromic.OrderManagementApplication;
 import pchromic.repository.OrderRepository;
 import pchromic.service.Impl.OrderServiceImpl;
-import sun.nio.cs.UTF_32;
-import sun.text.normalizer.UTF16;
 
+import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -32,11 +24,11 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
-
 public class OrderServiceTest {
+
 
     @Rule
     public TemporaryFolder tempFolder = new TemporaryFolder();
@@ -46,6 +38,7 @@ public class OrderServiceTest {
 
     @Autowired
     OrderRepository repository;
+
 
     @Test
     public void shouldMapCsvFile() {
@@ -76,13 +69,16 @@ public class OrderServiceTest {
 
     @Test
     public void shouldGetTotalAmountOfOrders() {
+        // when
         repository.findAll();
-        assertTrue(repository.findAll().isEmpty());
-
+        // then
+        assertFalse(repository.findAll().isEmpty());
+        assertEquals(4,repository.findAll().size());
     }
 
     @Test
-    public void shouldGetTotalAmountOfOrdersForCustomer () {
+    public void shouldGetTotalAmountOfOrdersForClient() {
+
    }
 
     @Test
@@ -90,7 +86,7 @@ public class OrderServiceTest {
     }
 
     @Test
-    public void shouldGetTotalOrdersValueForCustomter() {
+    public void shouldGetTotalOrdersValueForClient() {
     }
 
     @Test
@@ -98,7 +94,7 @@ public class OrderServiceTest {
     }
 
     @Test
-    public void shouldGetAllOrdersForCustomer() {
+    public void shouldGetAllOrdersForClient() {
 
     }
 
@@ -108,7 +104,7 @@ public class OrderServiceTest {
     }
 
     @Test
-    public void shouldGetAverageValueOfOrderForCustomer() {
+    public void shouldGetAverageValueOfOrderForClient() {
     }
 
 
