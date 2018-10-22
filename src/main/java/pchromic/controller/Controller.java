@@ -20,8 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -156,7 +154,7 @@ public class Controller {
         resetGui();
         FileChooser fileChooser = createFileChooser();
         List<File> file = fileChooser.showOpenMultipleDialog(new Stage());
-        Charset charset = StandardCharsets.UTF_8;
+
 
         if (!Objects.isNull(file)) {
             for (File aFile : file) {
@@ -192,14 +190,6 @@ public class Controller {
     // -------------------------------------------------------------------------------------------------- //
 
     // ------------- GUI CONTENT MANAGEMENT ------------- //
-
-    /**
-     * Sets label with information concerning error
-     * @param log message describing error
-     */
-    private void setErrorLog(String log) {
-        this.errorMessage.setText(log);
-    }
 
     private void setErrorMessages() {
         for (String error: errorList) {

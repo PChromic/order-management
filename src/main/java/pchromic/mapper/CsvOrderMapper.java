@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 import pchromic.domain.Order;
 import pchromic.domain.OrderBuilder;
 
+import javax.annotation.Resource;
+
 @Component
 public class CsvOrderMapper {
 

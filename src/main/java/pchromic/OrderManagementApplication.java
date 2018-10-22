@@ -11,17 +11,14 @@ import org.springframework.context.ConfigurableApplicationContext;
 
 
 @SpringBootApplication
-
 public class OrderManagementApplication extends Application {
 
 	private ConfigurableApplicationContext springContext;
-	/*protected StageManager stageManager;*/
 	private Parent rootNode;
 
 	@Override
 	public void start(Stage primaryStage) {
-/*		stageManager = springContext.getBean(StageManager.class,primaryStage);
-		displayInitialScene();*/
+
 		primaryStage.setTitle("Order management");
 		primaryStage.setScene(new Scene(rootNode));
 		primaryStage.show();
@@ -31,7 +28,6 @@ public class OrderManagementApplication extends Application {
 	@Override
 	public void init() throws Exception{
 
-		//springContext = srpingBootApplicationContext();
 		springContext = SpringApplication.run(OrderManagementApplication.class);
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/rootLayout.fxml"));
 		fxmlLoader.setControllerFactory(springContext::getBean);

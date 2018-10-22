@@ -2,24 +2,55 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/main/java/pchromic/service/Impl/OrderServiceImpl.java" line="26" mnemonic="2" />
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java" line="178" />
+    <bookmark url="file://$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java" line="176" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cd250b1-e7d6-4acd-aab8-22f3c596a170" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/pchromic/TestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.csv" beforeDir="false" afterPath="$PROJECT_DIR$/report.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/report.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pchromic/OrderManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pchromic/OrderManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pchromic/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pchromic/domain/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pchromic/service/Impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pchromic/service/Impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pchromic/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pchromic/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pchromic/writer/CsvFileWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pchromic/writer/CsvFileWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/mapper/CsvOrderMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pchromic/mapper/CsvOrderMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pchromic/mapper/CsvOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pchromic/mapper/CsvOrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/mapper/CsvOrderMapperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/repository/OrderRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pchromic/repository/OrderRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/service/ReportServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pchromic/service/ReportServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/validator/ValidatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pchromic/validator/ValidatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pchromic/service/ReportServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/OrdersManagement-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/OrdersManagement-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/OrdersManagement-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/target/OrdersManagement-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/OrderManagementApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/OrderManagementApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pchromic/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/domain/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/domain/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/domain/OrderBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/domain/OrderBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/domain/Orders.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/domain/Orders.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/domain/Report.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/domain/Report.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/domain/ReportBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/domain/ReportBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/mapper/CsvOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/mapper/CsvOrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/mapper/XmlOrderMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/mapper/XmlOrderMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/repository/customized/CustomizedOrderRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/repository/customized/CustomizedOrderRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/repository/customized/Impl/OrderRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/repository/customized/Impl/OrderRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/service/Impl/OrderServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/service/Impl/OrderServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pchromic/service/Impl/ReportServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/service/Impl/ReportServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pchromic/service/OrderService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/service/OrderService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/service/ReportService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/service/ReportService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/validator/Impl/ValidatorImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/validator/Impl/ValidatorImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/validator/Validator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/validator/Validator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/writer/CsvFileWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/writer/CsvFileWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pchromic/writer/XmlFileWriter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pchromic/writer/XmlFileWriter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pchromic/mapper/CsvOrderMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pchromic/mapper/XmlOrderMapperTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pchromic/repository/OrderRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pchromic/repository/OrderRepositoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pchromic/service/OrderServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pchromic/service/OrderServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pchromic/service/ReportServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pchromic/validator/ValidatorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/pchromic/validator/ValidatorTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,23 +68,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="OrderService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/service/OrderService.java">
+      <file leaf-file-name="OrderManagementApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/OrderManagementApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            <state relative-caret-position="391">
+              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1052#1053#0" expanded="true" />
+                <element signature="e#1116#1117#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1178#1179#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderRepositoryTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/repository/OrderRepositoryTest.java">
+      <file leaf-file-name="TestSuite.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/TestSuite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="40" column="53" lean-forward="true" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
+            <state relative-caret-position="85">
+              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OrderServiceTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -64,8 +108,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -99,7 +143,6 @@
         <option value="$PROJECT_DIR$/src/main/java/pchromic/rootLayout.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/config/AppJavaConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/domain/Orders.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pchromic/mapper/CsvOrderMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/exception/WrongOrderFormatException.java" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/validator/Impl/ValidatorImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/repository/Impl/OrderRepositoryImpl.java" />
@@ -115,8 +158,6 @@
         <option value="$PROJECT_DIR$/src/test/java/pchromic/validator/Impl/ValidatorImplTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pchromic/service/ReportServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/pchromic/validator/ValidatorTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/schema.sql" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/domain/Order.java" />
         <option value="$PROJECT_DIR$/src/test/resources/import.sql" />
@@ -132,10 +173,15 @@
         <option value="$PROJECT_DIR$/src/main/java/pchromic/service/Impl/OrderServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/validator/Validator.java" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/service/OrderService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/blaTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/test/java/pchromic/repository/OrderRepositoryTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pchromic/mapper/CsvOrderMapper.java" />
         <option value="$PROJECT_DIR$/src/test/java/pchromic/mapper/CsvOrderMapperTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pchromic/TestSuite.java" />
         <option value="$PROJECT_DIR$/src/main/java/pchromic/OrderManagementApplication.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java" />
       </list>
     </option>
   </component>
@@ -174,9 +220,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -309,15 +352,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="pchromic" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="OrdersManagement" type="b2602c69:ProjectViewProjectNode" />
-              <item name="OrdersManagement" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pchromic" type="462c0819:PsiDirectoryNode" />
               <item name="repository" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -334,12 +368,24 @@
               <item name="OrdersManagement" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pchromic" type="462c0819:PsiDirectoryNode" />
+              <item name="validator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OrdersManagement" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OrdersManagement" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -386,22 +432,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.OrderServiceTest.shouldGetTotalAmountOfOrders">
+  <component name="RunManager" selected="JUnit.OrderServiceTest.shouldMapCsvFileToStringArray">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="OrderRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CsvOrderMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OrdersManagement" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pchromic.repository.*" />
+          <option name="PATTERN" value="pchromic.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pchromic.repository" />
-      <option name="MAIN_CLASS_NAME" value="pchromic.repository.OrderRepositoryTest" />
+      <option name="PACKAGE_NAME" value="pchromic.mapper" />
+      <option name="MAIN_CLASS_NAME" value="pchromic.mapper.CsvOrderMapperTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -413,19 +459,19 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="OrderRepositoryTest.shouldGetAverageValueOfOrderForClient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CsvOrderMapperTest.shouldMapFileToObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OrdersManagement" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="pchromic.repository.*" />
+          <option name="PATTERN" value="pchromic.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pchromic.repository" />
-      <option name="MAIN_CLASS_NAME" value="pchromic.repository.OrderRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldGetAverageValueOfOrderForClient" />
+      <option name="PACKAGE_NAME" value="pchromic.mapper" />
+      <option name="MAIN_CLASS_NAME" value="pchromic.mapper.CsvOrderMapperTest" />
+      <option name="METHOD_NAME" value="shouldMapFileToObject" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -436,30 +482,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="OrderRepositoryTest.shouldGetTotalOrdersValueForClient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="OrdersManagement" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="pchromic.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="pchromic.repository" />
-      <option name="MAIN_CLASS_NAME" value="pchromic.repository.OrderRepositoryTest" />
-      <option name="METHOD_NAME" value="shouldGetTotalOrdersValueForClient" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="OrderServiceTest.shouldGetTotalAmountOfOrders" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OrdersManagement" />
       <extension name="coverage">
         <pattern>
@@ -471,8 +494,8 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="pchromic.service" />
       <option name="MAIN_CLASS_NAME" value="pchromic.service.OrderServiceTest" />
-      <option name="METHOD_NAME" value="shouldGetTotalAmountOfOrders" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -482,7 +505,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="OrderServiceTest.shouldMapCsvFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="OrderServiceTest.shouldMapCsvFileToStringArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OrdersManagement" />
       <extension name="coverage">
         <pattern>
@@ -494,8 +517,31 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="pchromic.service" />
       <option name="MAIN_CLASS_NAME" value="pchromic.service.OrderServiceTest" />
-      <option name="METHOD_NAME" value="shouldMapCsvFile" />
+      <option name="METHOD_NAME" value="shouldMapCsvFileToStringArray" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="TestSuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OrdersManagement" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pchromic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="pchromic" />
+      <option name="MAIN_CLASS_NAME" value="pchromic.TestSuite" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -544,19 +590,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.OrderRepositoryTest.shouldGetTotalOrdersValueForClient" />
-      <item itemvalue="JUnit.OrderRepositoryTest" />
-      <item itemvalue="JUnit.OrderRepositoryTest.shouldGetAverageValueOfOrderForClient" />
-      <item itemvalue="JUnit.OrderServiceTest.shouldMapCsvFile" />
-      <item itemvalue="JUnit.OrderServiceTest.shouldGetTotalAmountOfOrders" />
+      <item itemvalue="JUnit.CsvOrderMapperTest" />
+      <item itemvalue="JUnit.TestSuite" />
+      <item itemvalue="JUnit.CsvOrderMapperTest.shouldMapFileToObject" />
+      <item itemvalue="JUnit.OrderServiceTest" />
+      <item itemvalue="JUnit.OrderServiceTest.shouldMapCsvFileToStringArray" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.OrderServiceTest.shouldGetTotalAmountOfOrders" />
-        <item itemvalue="JUnit.OrderServiceTest.shouldMapCsvFile" />
-        <item itemvalue="JUnit.OrderRepositoryTest" />
-        <item itemvalue="JUnit.OrderRepositoryTest.shouldGetAverageValueOfOrderForClient" />
-        <item itemvalue="JUnit.OrderRepositoryTest.shouldGetTotalOrdersValueForClient" />
+        <item itemvalue="JUnit.OrderServiceTest.shouldMapCsvFileToStringArray" />
+        <item itemvalue="JUnit.TestSuite" />
+        <item itemvalue="JUnit.OrderServiceTest" />
+        <item itemvalue="JUnit.CsvOrderMapperTest" />
+        <item itemvalue="JUnit.CsvOrderMapperTest.shouldMapFileToObject" />
       </list>
     </recent_temporary>
   </component>
@@ -589,35 +635,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="OrderRepositoryTest_shouldGetTotalOrdersValueForCustomer - 2018.10.21 at 23h 22m 15s.xml">
-      <configuration name="OrderRepositoryTest.shouldGetTotalOrdersValueForCustomer" configurationId="JUnit" />
+    <history-entry file="CsvOrderMapperTest - 2018.10.22 at 18h 00m 40s.xml">
+      <configuration name="CsvOrderMapperTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderRepositoryTest_shouldGetTotalOrdersValueForCustomer - 2018.10.21 at 23h 23m 45s.xml">
-      <configuration name="OrderRepositoryTest.shouldGetTotalOrdersValueForCustomer" configurationId="JUnit" />
+    <history-entry file="TestSuite - 2018.10.22 at 18h 02m 13s.xml">
+      <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderRepositoryTest_shouldGetTotalOrdersValueForCustomer - 2018.10.21 at 23h 28m 30s.xml">
-      <configuration name="OrderRepositoryTest.shouldGetTotalOrdersValueForCustomer" configurationId="JUnit" />
+    <history-entry file="TestSuite - 2018.10.22 at 18h 02m 34s.xml">
+      <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderRepositoryTest_shouldGetTotalOrdersValueForCustomer - 2018.10.22 at 00h 51m 53s.xml">
-      <configuration name="OrderRepositoryTest.shouldGetTotalOrdersValueForCustomer" configurationId="JUnit" />
+    <history-entry file="TestSuite - 2018.10.22 at 18h 02m 52s.xml">
+      <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderRepositoryTest - 2018.10.22 at 01h 00m 02s.xml">
-      <configuration name="OrderRepositoryTest" configurationId="JUnit" />
+    <history-entry file="OrderServiceTest - 2018.10.22 at 18h 07m 38s.xml">
+      <configuration name="OrderServiceTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderRepositoryTest_shouldGetAverageValueOfOrderForCustomer - 2018.10.22 at 01h 03m 26s.xml">
-      <configuration name="OrderRepositoryTest.shouldGetAverageValueOfOrderForCustomer" configurationId="JUnit" />
+    <history-entry file="TestSuite - 2018.10.22 at 18h 08m 24s.xml">
+      <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderRepositoryTest - 2018.10.22 at 01h 08m 23s.xml">
-      <configuration name="OrderRepositoryTest" configurationId="JUnit" />
+    <history-entry file="TestSuite - 2018.10.22 at 18h 08m 58s.xml">
+      <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderRepositoryTest - 2018.10.22 at 01h 14m 16s.xml">
-      <configuration name="OrderRepositoryTest" configurationId="JUnit" />
+    <history-entry file="TestSuite - 2018.10.22 at 18h 09m 09s.xml">
+      <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderServiceTest_shouldMapCsvFile - 2018.10.22 at 01h 22m 54s.xml">
-      <configuration name="OrderServiceTest.shouldMapCsvFile" configurationId="JUnit" />
+    <history-entry file="TestSuite - 2018.10.22 at 18h 10m 40s.xml">
+      <configuration name="TestSuite" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OrderServiceTest_shouldGetTotalAmountOfOrders - 2018.10.22 at 01h 25m 37s.xml">
-      <configuration name="OrderServiceTest.shouldGetTotalAmountOfOrders" configurationId="JUnit" />
+    <history-entry file="OrderServiceTest_shouldMapCsvFileToStringArray - 2018.10.22 at 18h 11m 33s.xml">
+      <configuration name="OrderServiceTest.shouldMapCsvFileToStringArray" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -632,7 +678,7 @@
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5005208" side_tool="true" weight="0.34713376" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.10520833" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.1703125" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.3524416" />
       <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.2282378" />
@@ -685,24 +731,6 @@
           <option name="timeStamp" value="28" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java</url>
-          <line>29</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pchromic/mapper/CsvOrderMapperTest.java</url>
-          <line>60</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java</url>
-          <line>73</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pchromic/repository/customized/Impl/OrderRepositoryImpl.java</url>
           <line>35</line>
           <properties />
@@ -717,9 +745,12 @@
           <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="63" />
+      <option name="time" value="70" />
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="(Orders) jaxbUnmarshaller.unmarshal(file)" language="JAVA" />
+      </configuration>
       <configuration name="Application">
         <watch expression="nextLine" language="JAVA" />
       </configuration>
@@ -727,6 +758,11 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>(Orders) jaxbUnmarshaller.unmarshal(file)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>tq.getResultList()</expression-string>
         <language-id>JAVA</language-id>
@@ -772,35 +808,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>orders.parse()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="8413" selection-start-line="8413" selection-end-line="8413" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/control/Button.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/scene/Scene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="2494" selection-start-line="2494" selection-end-line="2494" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -873,16 +883,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/service/Impl/OrderServiceImplTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/service/Impl/ReportServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/service/Impl/ReportServiceImplTest.java" />
     <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/validator/Impl/ValidatorImplTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/validator/Impl/ValidatorImpl.java">
@@ -899,20 +899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/mapper/XmlOrderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="11" column="19" lean-forward="true" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="172" column="49" selection-start-line="172" selection-start-column="49" selection-end-line="172" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../projects/JPA/src/test/java/com/capgemini/Dao/CarDaoImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -924,16 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
           <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1000,13 +976,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/service/ReportServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1018,20 +987,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/mapper/CsvOrderMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/import.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="96" selection-start-line="1" selection-start-column="96" selection-end-line="1" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -1058,48 +1013,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/repository/customized/CustomizedOrderRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/validator/Validator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/repository/OrderRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="40" column="53" lean-forward="true" selection-start-line="40" selection-start-column="53" selection-end-line="40" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/mapper/CsvOrderMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/validator/ValidatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1110,41 +1027,161 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/OrderManagementApplication.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/service/OrderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        <state relative-caret-position="578">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <element signature="e#1374#1375#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/import.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="96" selection-start-line="1" selection-start-column="96" selection-end-line="1" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/mapper/XmlOrderMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/mapper/XmlOrderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="27" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/blaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="39" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/service/ReportServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/repository/customized/CustomizedOrderRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="11" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/controller/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="198" column="26" lean-forward="true" selection-start-line="198" selection-start-column="26" selection-end-line="198" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/service/Impl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="612">
           <caret line="108" column="39" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/repository/OrderRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding>
-            <element signature="e#1848#1849#0" expanded="true" />
-            <element signature="e#1880#1881#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/repository/customized/Impl/OrderRepositoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="72" column="18" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+        <state relative-caret-position="493">
+          <caret line="43" column="28" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/service/OrderService.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/validator/ValidatorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/service/Impl/ReportServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/mapper/CsvOrderMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/mapper/CsvOrderMapperTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/writer/XmlFileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/TestSuite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pchromic/OrderManagementApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1052#1053#0" expanded="true" />
+            <element signature="e#1116#1117#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1178#1179#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pchromic/service/OrderServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="61" column="2" selection-start-line="61" selection-start-column="2" selection-end-line="61" selection-end-column="2" />
         </state>
       </provider>
     </entry>

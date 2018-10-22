@@ -28,9 +28,9 @@ public class OrderRepositoryTest {
         // then
         assertFalse(ordersForCustomer.isEmpty());
         assertEquals(3,ordersForCustomer.size());
-        assertTrue(ordersForCustomer.get(0).getClientId().equals("1"));
-        assertTrue(ordersForCustomer.get(1).getClientId().equals("1"));
-        assertTrue(ordersForCustomer.get(2).getClientId().equals("1"));
+        assertEquals("1", ordersForCustomer.get(0).getClientId());
+        assertEquals("1", ordersForCustomer.get(1).getClientId());
+        assertEquals("1", ordersForCustomer.get(2).getClientId());
     }
 
     @Test
