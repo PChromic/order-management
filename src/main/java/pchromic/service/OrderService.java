@@ -17,7 +17,7 @@ public interface OrderService {
      * Takes a list of orders as parameter and returns its size.
      * @return size of orders list
      */
-    Integer getTotalAmountOfOrders();
+    Long getTotalAmountOfOrders();
 
     /**
      * Takes a list of orders and id of client as parameters and

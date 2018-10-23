@@ -4,6 +4,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.TestPropertySource;
+import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.junit4.SpringRunner;
 import pchromic.domain.Order;
 
@@ -14,6 +16,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Transactional
+
 public class OrderRepositoryTest {
 
     @Autowired
@@ -36,9 +39,9 @@ public class OrderRepositoryTest {
     @Test
     public void shouldGetTotalAmountOfOrders() {
         // when
-        Integer totalAmountOfOrders = repository.getTotalAmountOfOrders();
+        Long totalAmountOfOrders = repository.getTotalAmountOfOrders();
         // then
-        assertEquals((Integer)4,totalAmountOfOrders);
+        assertEquals((Long)4L,totalAmountOfOrders);
     }
 
     @Test
@@ -76,5 +79,13 @@ public class OrderRepositoryTest {
 
         // then
         assertEquals((Double)13.41,averageValueOfOrderForCustomer);
+    }
+
+    @Test
+    public void shouldGetAllOrders(){
+        // when
+        List<Order> allOrders = repository.getAllOrders();
+        // then
+        assertEquals(4,allOrders.size());
     }
 }

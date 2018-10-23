@@ -39,7 +39,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Integer getTotalAmountOfOrders() {
+    public Long getTotalAmountOfOrders() {
 
         return repository.getTotalAmountOfOrders();
     }

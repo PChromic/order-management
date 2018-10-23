@@ -10,7 +10,6 @@ import pchromic.service.OrderServiceTest;
 @Suite.SuiteClasses({
         OrderServiceTest.class,
         OrderRepositoryTest.class,
-
    })
 public class TestSuite {
 }

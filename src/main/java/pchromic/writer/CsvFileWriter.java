@@ -13,10 +13,10 @@ public class CsvFileWriter {
     public CsvFileWriter() {
     }
 
-    public void writeCsv(Report report) {
+    public boolean writeCsv(Report report) {
 
         try {
-            Writer writer = new FileWriter("report.csv");
+            Writer writer = new FileWriter("reports/report.csv");
 
             String[] header = new String[1];
             String[] entry = new String[1];
@@ -37,9 +37,11 @@ public class CsvFileWriter {
             writer.write(entry[0]);
 
             writer.close();
+            return true;
 
         } catch (IOException e) {
             System.err.println("Error writing the CSV file: " + e);
+            return false;
         }
 
     }

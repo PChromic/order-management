@@ -25,54 +25,64 @@ public class OrderRepositoryImpl implements CustomizedOrderRepository {
 
     @Override
     public List<Order> getOrdersForClient(String clientId) {
-        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-        CriteriaQuery<Order> query = builder.createQuery(Order.class);
-
-        Root<Order> order = query.from(Order.class);
-        query.select(order)
-                .where(builder.equal(order.get("clientId"), clientId));
-
-        TypedQuery<Order> tq = entityManager.createQuery(query);
-        return tq.getResultList();
+        Query query = entityManager
+                .createQuery(
+                        "SELECT o " +
+                        "FROM Order o " +
+                        "WHERE o.clientId = :clientId")
+                .setParameter("clientId",clientId);
+        return query.getResultList();
     }
 
 
     @Override
-    public Integer getTotalAmountOfOrders() {
-        Query query = entityManager.
-                createQuery("SELECT o FROM Order o");
-        List<String> list = query.getResultList();
-        return list.size();
+    public Long getTotalAmountOfOrders() {
+        Query query = entityManager
+                .createQuery(
+                        "SELECT COUNT(*) " +
+                                "FROM Order AS o");
+    return (Long)query.getSingleResult();
     }
 
     @Override
     public Double getTotalOrdersValue() {
         Query query = entityManager.
-                createQuery("SELECT o.price FROM Order o");
+                createQuery(
+                        "SELECT SUM(o.price) " +
+                        "FROM Order o");
         List<Double> list = query.getResultList();
 
-        return list.stream().mapToDouble(d-> d).sum();
+        return (Double)query.getSingleResult();
     }
 
     @Override
     public Double getTotalOrdersValueForClient(String clientId) {
         Query query = entityManager.
-                createQuery("SELECT o.price FROM Order o WHERE o.clientId = :clientId")
+                createQuery(
+                        "SELECT SUM(o.price) " +
+                        "FROM Order o " +
+                        "WHERE o.clientId = :clientId")
                 .setParameter("clientId",clientId);
-        List<Double> list = query.getResultList();
 
-        return list.stream().mapToDouble(d-> d).sum();
+        return (Double)query.getSingleResult();
     }
 
     @Override
     public List<Order> getAllOrders() {
-        return entityManager.createQuery("SELECT o FROM order o").getResultList();
+        Query query = entityManager
+                .createQuery(
+                        "SELECT o " +
+                        "FROM Order o");
+        return query.getResultList();
     }
 
     @Override
     public Integer getOrdersAmountForClient(String clientId) {
-        Query query = entityManager.
-                createQuery("SELECT o.price FROM Order o WHERE o.clientId = :clientId")
+        Query query = entityManager
+                .createQuery(
+                        "SELECT COUNT(*) " +
+                                "FROM Order AS o"+
+                                "WHERE o.clientId = :clientId")
                 .setParameter("clientId",clientId);
         return query.getResultList().size();
     }
@@ -80,13 +90,11 @@ public class OrderRepositoryImpl implements CustomizedOrderRepository {
     @Override
     public Double getAverageValueOfOrder() {
         Query query = entityManager.
-                createQuery("SELECT o.price FROM Order o");
+                createQuery(
+                        "SELECT AVG(o.price) " +
+                                "FROM Order o");
 
-        List<Double> list = query.getResultList();
-
-        double averageValue = list.stream()
-                .mapToDouble(d -> d)
-                .sum() / list.size();
+        Double averageValue = (Double)query.getSingleResult();
 
         return BigDecimal.valueOf(averageValue)
                 .setScale(2, RoundingMode.HALF_UP)
@@ -96,13 +104,13 @@ public class OrderRepositoryImpl implements CustomizedOrderRepository {
     @Override
     public Double getAverageValueOfOrderForClient(String clientId) {
         Query query = entityManager.
-                createQuery("SELECT o.price FROM Order o WHERE o.clientId = :clientId")
+                createQuery(
+                        "SELECT AVG(o.price)" +
+                                "FROM Order AS o " +
+                                "WHERE o.clientId = :clientId")
                 .setParameter("clientId",clientId);
-        List<Double> list = query.getResultList();
 
-        double averageValue = list.stream()
-                .mapToDouble(d -> d)
-                .sum() / list.size();
+        Double averageValue = (Double)query.getSingleResult();
 
         return BigDecimal.valueOf(averageValue)
                 .setScale(2, RoundingMode.HALF_UP)

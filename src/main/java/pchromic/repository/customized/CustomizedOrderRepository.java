@@ -8,7 +8,7 @@ public interface CustomizedOrderRepository {
 
     List<Order> getOrdersForClient(String clientId);
 
-    Integer getTotalAmountOfOrders();
+    Long getTotalAmountOfOrders();
 
     Double getTotalOrdersValue();
 

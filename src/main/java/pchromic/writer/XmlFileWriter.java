@@ -18,7 +18,7 @@ import java.util.Objects;
 
 public class XmlFileWriter {
 
-    public void writeXml(Report report) {
+    public boolean writeXml(Report report) {
 
 
         try
@@ -53,7 +53,7 @@ public class XmlFileWriter {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("report.xml"));
+            StreamResult result = new StreamResult(new File("reports/report.xml"));
 
             // Output to console for testing
             //StreamResult result2 = new StreamResult(System.out);
@@ -62,12 +62,14 @@ public class XmlFileWriter {
             transformer.transform(source, result);
 
             System.out.println("File saved!");
+            return true;
 
         } catch(
                 ParserConfigurationException | TransformerException pce)
 
         {
             pce.printStackTrace();
+            return false;
         }
     }
 

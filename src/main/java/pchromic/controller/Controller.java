@@ -3,6 +3,7 @@ package pchromic.controller;
 import pchromic.domain.Order;
 import pchromic.domain.Report;
 import pchromic.domain.ReportBuilder;
+import pchromic.enums.ReportType;
 import pchromic.mapper.XmlOrderMapper;
 import pchromic.service.OrderService;
 import pchromic.service.ReportService;
@@ -62,7 +63,7 @@ public class Controller {
     private XmlFileWriter xmlWriter;
     private Report report;
     private String clientId;
-    private List<String> errorList = new ArrayList<>();
+    private List<String> logList = new ArrayList<>();
 
     /**
      * Method responsible for creating instances of utilities needed to manage orders
@@ -167,7 +168,7 @@ public class Controller {
 
                     case "csv":
                         try {
-                        errorList = orderService.mapCsv(Objects.requireNonNull(aFile));
+                        logList = orderService.mapCsv(Objects.requireNonNull(aFile));
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
@@ -184,19 +185,19 @@ public class Controller {
             onFilter(event);
         }
         else
-            errorList.add("File not chosen \n");
-        setErrorMessages();
+            logList.add("File not chosen \n");
+        setLogMessages();
     }
     // -------------------------------------------------------------------------------------------------- //
 
     // ------------- GUI CONTENT MANAGEMENT ------------- //
 
-    private void setErrorMessages() {
-        for (String error: errorList) {
+    private void setLogMessages() {
+        for (String log: logList) {
             errorMessages.setWrapText(true);
-            errorMessages.appendText(error);
+            errorMessages.appendText(log);
         }
-        errorList.clear();
+        logList.clear();
     }
 
     /**
@@ -249,8 +250,8 @@ public class Controller {
         else {
             resetGui();
             disableWriteToFile();
-            errorList.add("Client does not exist \n");
-            setErrorMessages();
+            logList.add("Client does not exist \n");
+            setLogMessages();
         }
 
     }
@@ -258,7 +259,24 @@ public class Controller {
 
 
     // ------------- WRITING SPECIFIC REPORT TO FILE ------------- //
+    private void generateReport (ReportType reportType, String clientId){
+        switch (reportType) {
+            default:
+                break;
+            case AMOUNT:
 
+        }
+    }
+
+    private void saveReportToFile (Report report){
+        boolean isCsvSaved = csvWriter.writeCsv(this.report);
+        boolean isXmlSaved = xmlWriter.writeXml(this.report);
+
+        if (isCsvSaved && isXmlSaved)
+            logList.add("File saved \n");
+
+        setLogMessages();
+    }
     /**
      * Writes data to XML and CSV files data concerning average orders value
      * @param event pressing the button
@@ -277,9 +295,7 @@ public class Controller {
                     .withOrdersAvgValue(orderService.getAverageValueOfOrderForClient(this.clientId)
                             .toString())
                     .build();
-        csvWriter.writeCsv(this.report);
-        xmlWriter.writeXml(this.report);
-
+        saveReportToFile(this.report);
     }
 
     /**
@@ -300,8 +316,7 @@ public class Controller {
                     .withOrdersAmount(orderService.getTotalAmountOfOrdersForClient(this.clientId)
                             .toString())
                     .build();
-        csvWriter.writeCsv(this.report);
-        xmlWriter.writeXml(this.report);
+        saveReportToFile(this.report);
 
     }
 
@@ -323,8 +338,8 @@ public class Controller {
                     .withOrdersValue(orderService.getTotalOrdersValueForClient(this.clientId)
                             .toString())
                     .build();
-        csvWriter.writeCsv(this.report);
-        xmlWriter.writeXml(this.report);
+        saveReportToFile(this.report);
+
     }
     // -------------------------------------------------------------------------------------------------- //
 

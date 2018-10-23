@@ -29,7 +29,7 @@ public class ReportServiceImpl implements ReportService {
             ordersValue = service.getTotalOrdersValueForClient( clientId).toString();
             ordersAvgValue = service.getAverageValueOfOrderForClient( clientId).toString();
         }
-        return  new Report(orderAmount,ordersValue,ordersAvgValue);
+        return new Report(orderAmount,ordersValue,ordersAvgValue);
     }
 
 
