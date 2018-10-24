@@ -107,7 +107,7 @@ public class XmlFileWriter {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource source = new DOMSource(doc);
-        StreamResult result = new StreamResult(new File("reports/report.xml"));
+        StreamResult result = new StreamResult(new File("report.xml"));
 
         transformer.setOutputProperty(OutputKeys.INDENT,"yes");
         transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");

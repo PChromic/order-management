@@ -19,7 +19,7 @@ public class CsvFileWriter {
     public boolean writeCsv(Report report) {
 
         try {
-            Writer writer = new FileWriter("reports/report.csv");
+            Writer writer = new FileWriter("report.csv");
             // set name of report
             setHeaderName(report);
             // set value of report
