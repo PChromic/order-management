@@ -3,6 +3,8 @@ package pchromic.service.Impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pchromic.domain.Report;
+import pchromic.domain.ReportBuilder;
+import pchromic.enums.ReportType;
 import pchromic.service.OrderService;
 import pchromic.service.ReportService;
 
@@ -14,7 +16,7 @@ public class ReportServiceImpl implements ReportService {
     OrderService service;
 
     @Override
-    public Report setOrderReports(String clientId){
+    public Report generateReports(String clientId){
         String orderAmount;
         String ordersValue;
         String ordersAvgValue;
@@ -29,8 +31,7 @@ public class ReportServiceImpl implements ReportService {
             ordersValue = service.getTotalOrdersValueForClient( clientId).toString();
             ordersAvgValue = service.getAverageValueOfOrderForClient( clientId).toString();
         }
-        return new Report(orderAmount,ordersValue,ordersAvgValue);
+        return new Report(orderAmount,ordersValue,ordersAvgValue,ReportType.NONE);
     }
 
-
-}
+ }

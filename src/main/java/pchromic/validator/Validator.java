@@ -21,8 +21,13 @@ public interface Validator {
      * @param csvLine array of strings containing splitted values of single row
      * @return true if data format is correct, false otherwise
      */
-    @SuppressWarnings("unused")
     boolean isCsvLineValid(String[] csvLine);
 
+    /**
+     * Validates if client with given ID as parameter exists or, if exists, has any orders
+     * @param orders list of orders fetched from database
+     * @param clientId id of client
+     * @return true if client exists or has any orders
+     */
     boolean clientHasOrders(List<Order> orders, String clientId);
 }

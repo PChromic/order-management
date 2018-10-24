@@ -1,5 +1,7 @@
 package pchromic.domain;
 
+import pchromic.enums.ReportType;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -16,14 +18,16 @@ public class Report {
     private String ordersAmount;
     private String ordersValue;
     private String ordersAvgValue;
+    private ReportType reportType;
 
     public Report() {
     }
 
-    public Report(String ordersAmount, String ordersValue, String ordersAvgValue) {
+    public Report(String ordersAmount, String ordersValue, String ordersAvgValue, ReportType reportType) {
         this.ordersAmount = ordersAmount;
         this.ordersValue = ordersValue;
         this.ordersAvgValue = ordersAvgValue;
+        this.reportType = reportType;
     }
 
     public String getOrdersAmount() {
@@ -48,5 +52,13 @@ public class Report {
 
     public void setOrdersAvgValue(String ordersAvgValue) {
         this.ordersAvgValue = ordersAvgValue;
+    }
+
+    public ReportType getReportType() {
+        return reportType;
+    }
+
+    public void setReportType(ReportType reportType) {
+        this.reportType = reportType;
     }
 }

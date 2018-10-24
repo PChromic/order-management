@@ -1,7 +1,11 @@
 package pchromic.enums;
 
+/**
+ * Class defining types or report
+ */
 public enum ReportType {
-    AVG_VAL,
+    NONE,
+    AVERAGE_VALUE,
     AMOUNT,
-    TOTAL_VAL
+    TOTAL_VALUE
 }

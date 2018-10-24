@@ -25,12 +25,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Controller responsible for GUI layout and input/output management
+ */
 @Component
 public class Controller {
 
     @FXML private Button filterButton;
     @FXML private TextField filterField;
-    @FXML private Label errorMessage;
     @FXML private TableView<Order> orderList;
     @FXML private TableColumn<Order, String> clientIdCol;
     @FXML private TableColumn<Order, Long> requestIdCol;
@@ -43,7 +45,6 @@ public class Controller {
     @FXML private Button orderAmountReport;
     @FXML private Button ordersValueReport;
     @FXML private Button averageOrdersValueReport;
-    @FXML private Label wrongOrderFormat;
     @FXML private TextArea errorMessages;
 
 
@@ -56,7 +57,6 @@ public class Controller {
     @Autowired
     private
     OrderService orderService;
-
 
     private XmlOrderMapper xmlMapper;
     private CsvFileWriter csvWriter;
@@ -96,13 +96,12 @@ public class Controller {
     private void resetGui() {
         clearOrderReports();
         filterField.setText("");
-        wrongOrderFormat.setText("");
         errorMessages.clear();
         orderList.getItems().clear();
     }
 
     /**
-     * Disables possibility to write reports to file
+     * Disables write to file buttons
      */
     private void disableWriteToFile() {
         orderAmountReport.setDisable(true);
@@ -146,9 +145,9 @@ public class Controller {
 
 
     /**
-     * Opens file / list of files and maps it / them to list of orders. Calls onFilter method
+     * Opens file(s) and maps to list of orders. Calls onFilter method
      * if it corresponding button was clicked
-     * @param event pressing the button
+     * @param event pressing the OpenFile button
      */
     @FXML void onOpenFile(ActionEvent event) {
 
@@ -192,6 +191,9 @@ public class Controller {
 
     // ------------- GUI CONTENT MANAGEMENT ------------- //
 
+    /**
+     * Views messages in text box on GUI
+     */
     private void setLogMessages() {
         for (String log: logList) {
             errorMessages.setWrapText(true);
@@ -241,7 +243,7 @@ public class Controller {
         this.clientId = filterField.getText();
         boolean hasOrders = validator.clientHasOrders(orderService.getAllOrders(), clientId);
         if(hasOrders){
-                this.report = reportService.setOrderReports(clientId);
+                this.report = reportService.generateReports(clientId);
             setOrderReports(report);
             ObservableList<Order> orders = orderService.setOrderTableContent(clientId);
             orderList.setItems(orders);
@@ -259,15 +261,11 @@ public class Controller {
 
 
     // ------------- WRITING SPECIFIC REPORT TO FILE ------------- //
-    private void generateReport (ReportType reportType, String clientId){
-        switch (reportType) {
-            default:
-                break;
-            case AMOUNT:
 
-        }
-    }
-
+    /**
+     * Create both CSV and XML files containing report passed as parameter
+     * @param report report to be saved
+     */
     private void saveReportToFile (Report report){
         boolean isCsvSaved = csvWriter.writeCsv(this.report);
         boolean isXmlSaved = xmlWriter.writeXml(this.report);
@@ -278,7 +276,7 @@ public class Controller {
         setLogMessages();
     }
     /**
-     * Writes data to XML and CSV files data concerning average orders value
+     * Writes report containing average value of orders to XML and CSV files
      * @param event pressing the button
      */
     @FXML
@@ -286,20 +284,24 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersAvgValue(orderService.getAverageValueOfOrder()
-                            .toString())
+                    .withOrdersAvgValue(
+                            orderService.getAverageValueOfOrder().toString()
+                    )
+                    .withReportType(ReportType.AVERAGE_VALUE)
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAvgValue(orderService.getAverageValueOfOrderForClient(this.clientId)
-                            .toString())
+                    .withOrdersAvgValue(
+                            orderService.getAverageValueOfOrderForClient(this.clientId).toString()
+                    )
+                    .withReportType(ReportType.AVERAGE_VALUE)
                     .build();
         saveReportToFile(this.report);
     }
 
     /**
-     * Writes data to XML and CSV files data concerning orders amount
+     * Writes report containing orders amount to XML and CSV files
      * @param event pressing the button
      */
     @FXML
@@ -307,21 +309,25 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersAmount(orderService.getTotalAmountOfOrders()
-                            .toString())
+                    .withOrdersAmount(
+                            orderService.getTotalAmountOfOrders().toString()
+                    )
+                    .withReportType(ReportType.AMOUNT)
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersAmount(orderService.getTotalAmountOfOrdersForClient(this.clientId)
-                            .toString())
+                    .withOrdersAmount(
+                            orderService.getTotalAmountOfOrdersForClient(this.clientId).toString()
+                    )
+                    .withReportType(ReportType.AMOUNT)
                     .build();
         saveReportToFile(this.report);
 
     }
 
     /**
-     * Writes data to XML and CSV files data concerning orders value
+     * Writes report containing orders value to XML and CSV files
      * @param event pressing the button
      */
     @FXML
@@ -329,14 +335,18 @@ public class Controller {
 
         if (this.clientId.isEmpty()) {
             this.report = ReportBuilder.aReport()
-                    .withOrdersValue(orderService.getTotalOrdersValue()
-                            .toString())
+                    .withOrdersValue(
+                            orderService.getTotalOrdersValue().toString()
+                    )
+                    .withReportType(ReportType.TOTAL_VALUE)
                     .build();
         }
         else
             this.report = ReportBuilder.aReport()
-                    .withOrdersValue(orderService.getTotalOrdersValueForClient(this.clientId)
-                            .toString())
+                    .withOrdersValue(
+                            orderService.getTotalOrdersValueForClient(this.clientId).toString()
+                    )
+                    .withReportType(ReportType.TOTAL_VALUE)
                     .build();
         saveReportToFile(this.report);
 

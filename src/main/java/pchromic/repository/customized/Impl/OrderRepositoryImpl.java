@@ -81,7 +81,7 @@ public class OrderRepositoryImpl implements CustomizedOrderRepository {
         Query query = entityManager
                 .createQuery(
                         "SELECT COUNT(*) " +
-                                "FROM Order AS o"+
+                                "FROM Order AS o "+
                                 "WHERE o.clientId = :clientId")
                 .setParameter("clientId",clientId);
         return query.getResultList().size();

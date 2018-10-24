@@ -1,9 +1,13 @@
 package pchromic.domain;
 
+import pchromic.enums.ReportType;
+
 public final class ReportBuilder {
     private String ordersAmount;
     private String ordersValue;
     private String ordersAvgValue;
+    private ReportType reportType;
+
 
     private ReportBuilder() {
     }
@@ -25,13 +29,19 @@ public final class ReportBuilder {
     public ReportBuilder withOrdersAvgValue(String ordersAvgValue) {
         this.ordersAvgValue = ordersAvgValue;
         return this;
+
+    }public ReportBuilder withReportType(ReportType reportType) {
+        this.reportType = reportType;
+        return this;
     }
+
 
     public Report build() {
         Report report = new Report();
         report.setOrdersAmount(ordersAmount);
         report.setOrdersValue(ordersValue);
         report.setOrdersAvgValue(ordersAvgValue);
+        report.setReportType(reportType);
         return report;
     }
 }

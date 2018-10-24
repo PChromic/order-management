@@ -75,8 +75,6 @@
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="errorMessage" layoutX="23.0" layoutY="225.0" textFill="RED" />
-                  <Label fx:id="wrongOrderFormat" layoutX="14.0" layoutY="197.0" textFill="RED" AnchorPane.leftAnchor="20.0" />
                   <TextArea fx:id="errorMessages" layoutX="230.0" layoutY="197.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="75.0" AnchorPane.rightAnchor="30.0" />
                 <Button fx:id="openFileButton" layoutX="302.0" layoutY="400.0" mnemonicParsing="false" onAction="#onOpenFile" prefHeight="25.0" prefWidth="108.0" text="Open File" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" />
                </children>

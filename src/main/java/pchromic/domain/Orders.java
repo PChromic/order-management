@@ -5,6 +5,9 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
+/**
+ * Class used for XML files to Order objects mapping
+ */
 @XmlRootElement (name = "orders")
 public class Orders {
 
