@@ -15,6 +15,11 @@ import java.io.File;
 
 public class XmlFileWriter {
 
+    /**
+     * Writes report to XML file
+     * @param report report to be saved
+     * @return returns true if save is successful, false otherwise
+     */
     public boolean writeXml(Report report) {
         try
 
@@ -43,6 +48,11 @@ public class XmlFileWriter {
         }
     }
 
+    /**
+     * Creates XML document
+     * @return returns created document
+     * @throws ParserConfigurationException thrown if document creation failed
+     */
     private Document createDocument() throws ParserConfigurationException {
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -50,14 +60,26 @@ public class XmlFileWriter {
         return docBuilder.newDocument();
     }
 
+    /**
+     * Adds root element to document
+     * @param doc document to which element will be added
+     * @param rootName element to be added
+     * @return returns added root element
+     */
     private Element addRootElement(Document doc, String rootName){
         Element rootElement = doc.createElement(rootName);
         doc.appendChild(rootElement);
         return rootElement;
     }
 
+    /**
+     * Adds child element to parent(RootElement)
+     * @param doc document to which element will be added
+     * @param report report of specified type to be added to element
+     * @return returns added child element
+     */
     private Element addXmlElement(Document doc, Report report){
-        String reportTypeName = report.getReportType().toString().toLowerCase().replace("_"," ");
+        String reportTypeName = report.getReportType().toString().toLowerCase();
         Element xmlReportName = doc.createElement(reportTypeName);
 
         switch (report.getReportType()){
@@ -76,6 +98,11 @@ public class XmlFileWriter {
         return xmlReportName;
     }
 
+    /**
+     * Takes document as parameter and transforms it into XML file, then saves it
+     * @param doc document to be saved
+     * @throws TransformerException thrown if writing to file failed
+     */
     private void writeToFile(Document doc) throws TransformerException {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
